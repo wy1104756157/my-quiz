@@ -16,6 +16,26 @@ body {
     box-shadow: 0 8px 30px rgba(0,0,0,0.08);
 }
 
+/* 顶部大标题专属样式 */
+.main-title {
+    text-align: center;
+    color: #1a2a3a;
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f2f5;
+    letter-spacing: 1px;
+}
+
+/* 手机端标题适配 */
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+}
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -71,21 +91,52 @@ body {
     background-color: #f5f7fa;
 }
 
-/* 按钮状态 */
-.option-btn.selected { background-color: #e3f2fd; border-color: #2196f3; }
-.option-btn.correct { background-color: #e8f5e9; border-color: #4caf50; color: #2e7d32; }
-.option-btn.wrong { background-color: #ffebee; border-color: #f44336; color: #c62828; }
+/* 选项状态样式 (使用 !important 保证生效优先级) */
+.option-btn.selected { 
+    background-color: #e3f2fd !important; 
+    border: 2px solid #2196f3 !important; 
+    color: #1976d2 !important; 
+}
+.option-btn.correct { 
+    background-color: #e8f5e9 !important; 
+    border-color: #4caf50 !important; 
+    color: #2e7d32 !important; 
+}
+.option-btn.wrong { 
+    background-color: #ffebee !important; 
+    border-color: #f44336 !important; 
+    color: #c62828 !important; 
+}
 
 .hidden { display: none !important; }
 
-/* 导航控制 */
+/* 提交按钮专属样式 */
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+    transition: all 0.2s;
+}
+
+.submit-btn:hover { background-color: #1976d2; }
+.submit-btn:active { transform: scale(0.98); }
+
+/* 导航控制组 (上一题/下一题并排) */
 .control-group {
     display: flex;
     gap: 10px;
-    margin-top: 20px;
+    margin: 20px 0;
 }
 
-.prev-btn, .next-btn, .submit-btn {
+.prev-btn, .next-btn {
     flex: 1;
     padding: 12px;
     border: none;
@@ -93,23 +144,29 @@ body {
     font-weight: bold;
     cursor: pointer;
     color: white;
+    transition: all 0.2s;
 }
 
 .prev-btn { background: #90a4ae; }
+.prev-btn:hover { background: #78909c; }
 .next-btn { background: #4caf50; }
-.submit-btn { background: #2196f3; margin-top: 15px; width: 100%; }
+.next-btn:hover { background: #43a047; }
 
+/* 解析框 */
 .explanation-box {
     margin-top: 20px;
     padding: 15px;
     background: #fffde7;
     border-left: 5px solid #fbc02d;
     font-size: 14px;
+    border-radius: 4px;
 }
 
-/* 底部模式切换 */
+.ans-title { margin-top: 0; }
+
+/* 底部模式切换选项卡 */
 .nav-tabs {
-    margin-top: 30px;
+    margin-top: 10px;
     display: flex;
     border: 2px solid #2196f3;
     border-radius: 10px;
@@ -124,10 +181,12 @@ body {
     color: #2196f3;
     font-weight: bold;
     cursor: pointer;
+    transition: background 0.2s;
 }
 
 .nav-btn.active { background: #2196f3; color: white; }
 
+/* 清空错题记录链接 */
 .clear-link {
     width: 100%;
     background: none;
