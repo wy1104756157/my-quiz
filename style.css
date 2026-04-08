@@ -1,0 +1,140 @@
+body {
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin: 0;
+}
+
+.container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 600px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.badge {
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    background: #e1f5fe;
+    color: #01579b;
+}
+
+.type-label {
+    background: #f1f8e9;
+    color: #33691e;
+    margin-left: 5px;
+}
+
+.progress-text {
+    color: #888;
+    font-weight: bold;
+}
+
+#question-text {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    color: #2c3e50;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option-btn {
+    text-align: left;
+    padding: 15px;
+    border: 1px solid #dcdfe6;
+    border-radius: 8px;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 15px;
+}
+
+.option-btn:hover:not(:disabled) {
+    background-color: #f5f7fa;
+}
+
+/* 按钮状态 */
+.option-btn.selected { background-color: #e3f2fd; border-color: #2196f3; }
+.option-btn.correct { background-color: #e8f5e9; border-color: #4caf50; color: #2e7d32; }
+.option-btn.wrong { background-color: #ffebee; border-color: #f44336; color: #c62828; }
+
+.hidden { display: none !important; }
+
+/* 导航控制 */
+.control-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.prev-btn, .next-btn, .submit-btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+}
+
+.prev-btn { background: #90a4ae; }
+.next-btn { background: #4caf50; }
+.submit-btn { background: #2196f3; margin-top: 15px; width: 100%; }
+
+.explanation-box {
+    margin-top: 20px;
+    padding: 15px;
+    background: #fffde7;
+    border-left: 5px solid #fbc02d;
+    font-size: 14px;
+}
+
+/* 底部模式切换 */
+.nav-tabs {
+    margin-top: 30px;
+    display: flex;
+    border: 2px solid #2196f3;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.nav-btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    background: white;
+    color: #2196f3;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.nav-btn.active { background: #2196f3; color: white; }
+
+.clear-link {
+    width: 100%;
+    background: none;
+    border: none;
+    color: #bbb;
+    font-size: 12px;
+    margin-top: 15px;
+    cursor: pointer;
+    text-decoration: underline;
+}

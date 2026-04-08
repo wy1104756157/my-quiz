@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能刷题系统</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="type-group">
+                <span id="mode-badge" class="badge">全量刷题模式</span>
+                <span id="question-type" class="badge" style="background:#e8f5e9; color:#2e7d32;">单选题</span>
+            </div>
+            <span id="progress" class="progress-text">0/0</span>
+        </div>
+        
+        <h2 id="question-text">正在初始化题库...</h2>
+        <div id="options-container" class="options-container"></div>
+        
+        <button id="submit-btn" class="submit-btn hidden">确认提交</button>
+        
+        <div id="explanation-box" class="explanation-box hidden">
+            <p><strong>标准答案：</strong> <span id="correct-answer"></span></p>
+            <p><strong>解析：</strong> <span id="explanation-text"></span></p>
+        </div>
+        
+        <button id="next-btn" class="next-btn hidden">下一题</button>
+
+        <div class="nav-tabs">
+            <button id="all-quiz-btn" class="nav-btn active">开始刷题</button>
+            <button id="wrong-pool-btn" class="nav-btn">
+                错题集 (<span id="wrong-count">0</span>)
+            </button>
+        <div class="control-group">
+            <button id="prev-btn" class="prev-btn hidden">上一题</button>
+            <button id="next-btn" class="next-btn hidden">下一题</button>
+        </div>
+    <script src="app.js"></script>
+</body>
+</html>
