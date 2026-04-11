@@ -197,3 +197,69 @@ body {
     cursor: pointer;
     text-decoration: underline;
 }
+/* --- 登录拦截层样式 --- */
+.login-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* 确保它在最顶层 */
+}
+
+.login-box {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 350px;
+}
+
+.login-box h2 {
+    margin-top: 0;
+    color: #1a2a3a;
+}
+
+.login-box p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+#access-code {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+#verify-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#verify-btn:hover {
+    background-color: #1976d2;
+}
+
+.error-msg {
+    color: #f44336 !important;
+    margin-top: 15px;
+    margin-bottom: 0 !important;
+}

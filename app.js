@@ -1,3 +1,35 @@
+// --- 访问控制逻辑 ---
+
+// 在这里配置你分发给不同人的专属密码
+const VALID_PASSWORDS = [
+    "VIP2026",      // 密码1
+    "USER888",      // 密码2
+    "STUDENT01"     // 密码3
+];
+
+// 页面加载时检查是否已经登录过
+document.addEventListener("DOMContentLoaded", () => {
+    const isLogged = localStorage.getItem("is_logged_in");
+    if (isLogged === "true") {
+        // 如果已经验证过，直接隐藏遮罩层
+        document.getElementById("login-overlay").style.display = "none";
+    }
+});
+
+// 点击验证按钮的逻辑
+document.getElementById('verify-btn').addEventListener('click', () => {
+    const inputCode = document.getElementById('access-code').value.trim();
+    const errorMsg = document.getElementById('login-error');
+
+    if (VALID_PASSWORDS.includes(inputCode)) {
+        // 密码正确：记录登录状态，隐藏遮罩
+        localStorage.setItem("is_logged_in", "true");
+        document.getElementById("login-overlay").style.display = "none";
+    } else {
+        // 密码错误：显示提示
+        errorMsg.classList.remove('hidden');
+    }
+});
 let allQuestions = []; 
 let currentQueue = [];    
 let currentIndex = 0;
